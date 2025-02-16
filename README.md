@@ -34,3 +34,42 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## 1. ディレクトリとファイルの詳細
+
+・ `public/`
+
+ブログに使用する画像を配置しておくディレクトリ。
+
+例：`pulbic/logo.png`という画像がある場合、以下のようにアクセス可能
+```
+<img src="/logo.png" alt="Logo" />
+```
+
+・ `src/app/`
+
+Next.jsのApp Routerでは`src/app/`にページを作成する。`favicon.ico`(ブラウザのタブに表示されるサイトアイコン),
+`globals.css`(サイト全体に適用する グローバルな CSS（Tailwind やリセットCSSなど）)
+,`layout.tsx`(全ページの共通レイアウト)
+, `page.module.css`(トップページ専用の CSSモジュール)
+, `page.tsx`(トップページのコンポーネント)がある。
+
+・その他のファイル
+
+`eslint.config.mjs`: コード品質チェックツール（ESLint）の設定の定義
+
+`next.config.ts`: Next.jsのカスタマイズ設定を行う
+
+`package-lock.json`:`package.json`で管理されている`npm`パッケージのバージョンを固定するファイル、手動編集NG
+
+`package.json`: プロジェクトで使用する`npm`パッケージの情報を管理
+
+`postcss.config.js`: Tailwind CSS や CSS の自動最適化をするツール（PostCSS）の設定
+
+`tailwind.config.js`: Tailwind CSS のカスタマイズ設定を管理、カラーテーマやbレークポイント、プラグインなどを設定
+
+`tsconfig.json`: TypeScriptのコンパイル設定を管理
+
+
+
