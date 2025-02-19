@@ -1,4 +1,8 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -39,4 +43,22 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+
+a {
+  transition: color 0.2s ease-in-out;
 }
+
+a:hover {
+  color: #ff5100;
+}
+
+/* 記事カードのスタイル調整 */
+.article-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.article-card:hover {
+  transform: scale(1.02);
+}
+
