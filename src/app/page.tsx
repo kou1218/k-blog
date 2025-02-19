@@ -102,9 +102,43 @@
 //   );
 // }
 
+// export default function Home() {
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+//       {/* ヒーローセクション */}
+//       <section className="w-full bg-blue-500 text-white text-center py-16">
+//         <h1 className="text-5xl font-bold">Welcome to My Blog</h1>
+//         <p className="text-lg mt-4">学んだことを記録する技術ブログ</p>
+//       </section>
+
+//       {/* 記事一覧 */}
+//       <section className="w-full max-w-3xl mt-8">
+//         <h2 className="text-2xl font-bold mb-4">最新の記事</h2>
+//         <div className="grid gap-4">
+//           <div className="p-4 bg-white shadow-md rounded-lg">
+//             <h3 className="text-lg font-semibold">記事タイトル 1</h3>
+//             <p className="text-gray-600">2025-02-15</p>
+//             <p className="mt-2 text-gray-700">記事の概要...</p>
+//           </div>
+//           <div className="p-4 bg-white shadow-md rounded-lg">
+//             <h3 className="text-lg font-semibold">記事タイトル 2</h3>
+//             <p className="text-gray-600">2025-02-14</p>
+//             <p className="mt-2 text-gray-700">記事の概要...</p>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+import { getAllPosts } from "../lib/getPosts";
+import ArticleCard from "../components/ArticleCard";
+
 export default function Home() {
+  const posts = getAllPosts();
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex-col items-center justify-center min-h-screen bg-gray-100">
       {/* ヒーローセクション */}
       <section className="w-full bg-blue-500 text-white text-center py-16">
         <h1 className="text-5xl font-bold">Welcome to My Blog</h1>
@@ -115,16 +149,9 @@ export default function Home() {
       <section className="w-full max-w-3xl mt-8">
         <h2 className="text-2xl font-bold mb-4">最新の記事</h2>
         <div className="grid gap-4">
-          <div className="p-4 bg-white shadow-md rounded-lg">
-            <h3 className="text-lg font-semibold">記事タイトル 1</h3>
-            <p className="text-gray-600">2025-02-15</p>
-            <p className="mt-2 text-gray-700">記事の概要...</p>
-          </div>
-          <div className="p-4 bg-white shadow-md rounded-lg">
-            <h3 className="text-lg font-semibold">記事タイトル 2</h3>
-            <p className="text-gray-600">2025-02-14</p>
-            <p className="mt-2 text-gray-700">記事の概要...</p>
-          </div>
+          {posts.map((post) => (
+            <ArticleCard key={post.id} post={post} />
+          ))}
         </div>
       </section>
     </div>
