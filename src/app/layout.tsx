@@ -24,8 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="w-full">{children}</main>
 
         {/* フッター */}
-        <footer className="text-center text-gray-600 mt-10 p-4 border-t">
-          © 2025 My Blog
+        <footer className="text-center text-gray-600 mt-3 p-4 border-t">
+          © 2025 K-Blog
         </footer>
       </body>
     </html>

@@ -26,7 +26,7 @@ export default function Header() {
             <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">K-Blog</h1>
 
             {/* ナビゲーション */}
-            <nav className="hidden md:flex space-x-6 text-lg">
+            <nav className="md:flex space-x-6 text-lg">
             <Link href="/" className="hover:text-sky-600 transition">ホーム</Link>
             <Link href="/blog" className="hover:text-sky-600 transition">ブログ</Link>
             <Link href="/about" className="hover:text-sky-600 transition">プロフィール</Link>
