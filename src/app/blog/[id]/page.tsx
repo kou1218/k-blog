@@ -3,8 +3,9 @@ import { markdownToHtml } from "../../../lib/markdownToHtml";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export default async function BlogPost({ params }: { params: { id: string } }) {
-    const post = getPostById(params.id);
+export default async function BlogPost({ params }: Props) {
+    const { id } = await params
+    const post = getPostById(id);
 
     if (!post) {
         return notFound();
@@ -28,3 +29,9 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
         </div>
     );
 }
+type Params = Promise<{ [key: string]: string }>
+type Props = {
+    params: Params
+}
+
+
