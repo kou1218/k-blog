@@ -3,20 +3,8 @@
 */
 
 import type { Metadata } from "next"; // メタ情報 (タイトルなど)
-import { Geist, Geist_Mono } from "next/font/google"; // Google Fonts を読み込む
 import "./globals.css"; // CSS を適用
 import Header from "../components/Header";
-
-// フォントの設定
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 // SEO のためのメタ情報
 export const metadata: Metadata = {
