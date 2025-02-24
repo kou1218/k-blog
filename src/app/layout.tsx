@@ -5,6 +5,7 @@
 import type { Metadata } from "next"; // メタ情報 (タイトルなど)
 import { Geist, Geist_Mono } from "next/font/google"; // Google Fonts を読み込む
 import "./globals.css"; // CSS を適用
+import Header from "../components/Header";
 
 // フォントの設定
 const geistSans = Geist({
@@ -29,17 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body className="bg-gray-100 text-gray-900">
         {/* ヘッダー */}
-        <header className="p-4 bg-blue-500 text-white flex justify-between items-center">
-          <h1 className="text-xl font-bold">K-Blog</h1>
-          <nav>
-            <a href="/" className="px-4 hover:underline">ホーム</a>
-            <a href="/blog" className="px-4 hover:underline">ブログ</a>
-            <a href="/about" className="px-4 hover:underline">プロフィール</a>
-          </nav>
-        </header>
+        <Header />
 
         {/* メインコンテンツ */}
-        <main className="max-w-3xl mx-auto p-4">{children}</main>
+        <main className="w-full">{children}</main>
 
         {/* フッター */}
         <footer className="text-center text-gray-600 mt-10 p-4 border-t">
